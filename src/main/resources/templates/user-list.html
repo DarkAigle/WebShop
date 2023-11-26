@@ -22,7 +22,7 @@
     <div th:each="el : ${users}">
         <span th:text="${el.username}"></span>
         <span th:text="@{User}" class="badge text-bg-success rounded-pill"></span>
-        <span th:if="${#arrays.contains(el.roles,T(com.travin.myshop.domain.Role).ADMIN)}" th:text="@{Admin}" class="badge text-bg-danger rounded-pill"></span>
+        <span th:if="${#arrays.length(el.roles)==2}" th:text="@{Admin}" class="badge text-bg-danger rounded-pill"></span>
         <a th:href="'user/' + ${el.id}">edit</a>
     </div>
 </div>
